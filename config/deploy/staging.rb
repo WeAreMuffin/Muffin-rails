@@ -29,7 +29,7 @@ server '192.168.1.12',
        user: 'git',
        roles: %w{web app},
        ssh_options: {
-           keys: %w(/Users/sbarale/.ssh/id_rsa.pub),
+           keys: %w(/Users/sbarale/.ssh/id_rsa),
            forward_agent: false,
            auth_methods: %w(publickey),
            port: 2424
