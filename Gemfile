@@ -38,3 +38,47 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'pg'
+gem 'simple_form'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'quiet_assets'
+  gem 'rails_apps_pages'
+  gem 'rails_apps_testing'
+  gem 'rails_layout'
+  gem 'rb-fchange', :require=>false
+  gem 'rb-fsevent', :require=>false
+  gem 'rb-inotify', :require=>false
+  gem 'spring-commands-rspec'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+end
+
+group :production do
+  gem 'unicorn'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+end
+
