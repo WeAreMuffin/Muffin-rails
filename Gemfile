@@ -36,7 +36,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
 end
-group :production do
+group :staging, :production do
   gem 'unicorn'
 end
 group :test do

@@ -1,48 +1,55 @@
-Muffin Rails
-================
+# Muffin Rails
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Muffin est un site destiné aux étudiants de 42 afin d'améliorer les échanges, l'organisation et le partage au sein de la communauté.
+Muffin Rails est une nouvelle fournée pour encore plus de saveur.
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+## Ruby on Rails
 
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
+Cette application requiert:
 
 - Ruby 2.1.3
 - Rails 4.1.6
+- Postgresql
+- RVM (Recommandé)
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+En savoir plus sur
+- [L'installation de Rails](http://railsapps.github.io/installing-rails.html)
+- [L'installation de Postgresql](http://www.postgresql.org/download/)
+- [L'installation de RVM](http://rvm.io/rvm/install)
 
-Getting Started
----------------
+## Getting Started
 
-Documentation and Support
--------------------------
+Pour faire fonctionner l'application, il est nécessaire que vous possédiez
 
-Issues
--------------
+### Installation
 
-Similar Projects
-----------------
+- Ouvrez votre Terminal.
 
-Contributing
-------------
+- Clônez le dépôt sur votre machine.
+```bash
+$ git clone https://github.com/WeAreMuffin/Muffin-rails.git
+$ cd Muffin-rails
+```
 
-Credits
--------
+> $ à gauche représente le prompt
 
-License
--------
+- Installez les dépendances avec `bundle`.
+```bash
+$ bundle install
+```
+
+- Créez la base de données
+```bash
+$ rake db:create db:migrate db:seed
+```
+
+## Documentation and Support
+
+## Contribution
+
+## Credits
+
+Cette application a été générée avec [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
+crée par [RailsApps Project](http://railsapps.github.io/).
+
+## License
