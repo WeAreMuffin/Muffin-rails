@@ -11,8 +11,6 @@ set :user, 'git'
 set :scm, :git
 set :repository, 'git@github.com:WeAreMuffin/Muffin-rails.git'
 
-set :stages, %w(staging production)
-set :default_stage, 'staging'
 # set :format, :pretty
 # set :log_level, :debug
 set :pty, true
