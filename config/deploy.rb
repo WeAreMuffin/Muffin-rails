@@ -1,25 +1,25 @@
+set :application, 'Muffin-rails'
+set :user, 'git'
+
+set :scm, :git
+set :repo_url, 'https://github.com/WeAreMuffin/Muffin-rails.git'
+
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.3'
 
-set :application, 'Muffin-rails'
-# set :repo_url, 'https://github.com/WeAreMuffin/Muffin-rails.git'
-set :use_sudo, false
-set :user, 'git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # set :deploy_to, '/var/www/my_app'
-set :scm, :git
-set :repository, 'git@github.com:WeAreMuffin/Muffin-rails.git'
 
 # set :format, :pretty
 # set :log_level, :debug
 set :pty, true
 
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
