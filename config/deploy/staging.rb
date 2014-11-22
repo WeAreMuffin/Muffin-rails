@@ -1,12 +1,39 @@
-# For everywhere
-# server 'muffin.stephane-barale.com', :app, :web, :db, primary: true
-
-# For my home
-server '192.168.1.12', :app, :web, :db, primary: true
 set :stage, :staging
 set :rails_env, 'staging'
 set :deploy_to, '/home/git/webapps/Muffin-rails_staging/'
-set :branch, 'staging'
+set :branch, 'master'
+
+# For everywhere
+
+# role :app, %w{git@muffin.stephane-barale.com}
+# role :web, %w{git@muffin.stephane-barale.com}
+# role :db, %w{git@muffin.stephane-barale.com}
+
+# server 'muffin.stephane-barale.com',
+#        user: 'git',
+#        roles: %w{web app},
+#        ssh_options: {
+#            keys: %w(/home/sbarale/.ssh/id_rsa.pub),
+#            forward_agent: false,
+#            auth_methods: %w(publickey),
+#            port: 2424
+#        }
+
+# For my home
+
+role :app, %w{git@192.168.1.12}
+role :web, %w{git@192.168.1.12}
+role :db, %w{git@192.168.1.12}
+
+server '192.168.1.12',
+       user: 'git',
+       roles: %w{web app},
+       ssh_options: {
+           keys: %w(/home/sbarale/.ssh/id_rsa.pub),
+           forward_agent: false,
+           auth_methods: %w(publickey),
+           port: 2424
+       }
 
 # Simple Role Syntax
 # ==================
@@ -15,7 +42,7 @@ set :branch, 'staging'
 # unless any hosts have the primary property set.
 # role :app, %w{git@muffin.stephane-barale.com}
 # role :web, %w{git@muffin.stephane-barale.com}
-# role :db,  %w{git@muffin.stephane-barale.com}
+# role :db, %w{git@muffin.stephane-barale.com}
 
 # Extended Server Syntax
 # ======================
@@ -29,17 +56,13 @@ set :branch, 'staging'
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
 # set it globally
-set :ssh_options, {
-                    keys: %w(/home/sbarale/.ssh/id_rsa.pub),
-                    forward_agent: false,
-                    auth_methods: %w(publickey),
-                    port: 2424
-                }
-# and/or per server
-# server 'example.com',
-#   user: 'user_name',
-#   roles: %w{web app},
-#   ssh_options: {
+# set :ssh_options, {
+#                     keys: %w(/home/sbarale/.ssh/id_rsa.pub),
+#                     forward_agent: false,
+#                     auth_methods: %w(publickey),
+#                     port: 2424
+#                 }
+# and/or per server#   ssh_options: {
 #     user: 'user_name', # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
 #     forward_agent: false,
