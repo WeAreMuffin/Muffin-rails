@@ -126,8 +126,8 @@ production:
 - Le projet utilise la gem `Figaro` vous pouvez donc définir des variables d'environnement pour chaque environnement dans `application.yml`
 ```yml
 development:
-  gmail_username: stephane.barale@gmail.com
-  gmail_password: srhqthiuoxmuhqde
+  gmail_username: <gmail_email>
+  gmail_password: <gmail_password>
 
 staging:
   admin_name_staging: <admin_username_for_staging>
