@@ -4,7 +4,7 @@ set :user, 'git'
 set :scm, :git
 set :repo_url, 'https://github.com/WeAreMuffin/Muffin-rails.git'
 
-set :rvm1_ruby_version, 'ruby-2.1.3-p242'
+set :rvm1_ruby_version, '2.1.3'
 
 set :unicorn_config_path, 'config/unicorn.rb'
 
@@ -25,12 +25,15 @@ set :keep_releases, 5
 
 namespace :app do
   task :update_rvm_key do
-    execute :gpg2, '--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3'
+    on roles(:app) do
+      execute :gpg2, '--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3'
+    end
   end
 end
 before 'rvm1:install:rvm', 'app:update_rvm_key'
-# before 'deploy', 'rvm1:install:rvm'
-# before 'deploy', 'rvm1:install:ruby'
+before 'deploy', 'rvm1:install:rvm'
+before 'deploy', 'rvm1:install:ruby'
+before 'deploy', 'rvm1:install:gems'
 
 namespace :deploy do
 
