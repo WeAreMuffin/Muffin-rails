@@ -2,7 +2,7 @@ set :stage, :staging
 set :rails_env, 'staging'
 set :deploy_to, '/home/git/webapps/Muffin-rails_staging/'
 set :branch, 'staging'
-set :unicorn_pid, '/home/git/webapps/Muffin-rails_staging/shared/pids/unicorn.pid'
+set :unicorn_pid, '/home/git/webapps/Muffin-rails_staging/current/tmp/pids/unicorn.pid'
 
 # For everywhere
 
@@ -40,7 +40,13 @@ server '192.168.1.12',
 
 set :enable_ssl, false
 
-
+namespace :setup_unicorn_directory do
+  task :sockets do
+    on roles(:app) do
+      execute :mkdir, '-p /home/git/webapps/Muffin-rails_staging/shared/sockets'
+    end
+  end
+end
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary

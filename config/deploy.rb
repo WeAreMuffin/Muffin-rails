@@ -52,6 +52,7 @@ before 'deploy', 'rvm1:install:ruby'
 before 'deploy', 'bundler:install'
 before 'deploy:updated', 'bundler:install'
 
+after 'deploy:setup', 'setup_unicorn_directory:sockets'
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   desc 'Restart application'
