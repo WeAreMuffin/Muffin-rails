@@ -268,7 +268,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   capistrano (~> 3.0.1)
-  capistrano-bundler
   capistrano-rails (~> 1.1.0)
   capistrano-rails-console
   capistrano3-unicorn

@@ -23,6 +23,20 @@ set :keep_releases, 5
 
 # set :tests, []
 
+set :bundle_without, %w{development test}.join(' ')
+set :bundle_roles, :all
+
+namespace :bundler do
+  desc 'Install gems with bundler.'
+  task :install do
+    on roles fetch(:bundle_roles) do
+      within release_path do
+        execute :bundle, 'install', "--without #{fetch(:bundle_without)}"
+      end
+    end
+  end
+end
+
 namespace :app do
   task :update_rvm_key do
     on roles(:app) do
@@ -34,6 +48,7 @@ before 'rvm1:install:rvm', 'app:update_rvm_key'
 before 'deploy', 'rvm1:install:rvm'
 before 'deploy', 'rvm1:install:ruby'
 before 'deploy', 'bundler:install'
+before 'deploy:updated', 'bundler:install'
 
 namespace :deploy do
 
