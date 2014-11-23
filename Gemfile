@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'pg'
 gem 'simple_form'
+gem 'figaro'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -21,6 +22,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano3-unicorn'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
@@ -38,6 +40,7 @@ group :development, :test do
 end
 group :staging, :production do
   gem 'unicorn'
+  gem 'unicorn-rails'
 end
 group :test do
   gem 'capybara'

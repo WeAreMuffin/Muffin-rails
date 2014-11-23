@@ -12,6 +12,7 @@ set :branch, 'master'
 # server 'muffin.stephane-barale.com',
 #        user: 'git',
 #        roles: %w{web app},
+#        primary: true,
 #        ssh_options: {
 #            keys: %w(/home/sbarale/.ssh/id_rsa.pub),
 #            forward_agent: false,
@@ -27,13 +28,18 @@ role :db, %w{git@192.168.1.12}
 
 server '192.168.1.12',
        user: 'git',
-       roles: %w{web app},
+       roles: %w{web app db},
+       primary: true,
        ssh_options: {
            keys: %w(/Users/sbarale/.ssh/id_rsa),
            forward_agent: false,
            auth_methods: %w(publickey),
            port: 2424
        }
+
+set :unicorn_worker_count, 2
+set :enable_ssl, false
+
 
 # Simple Role Syntax
 # ==================
