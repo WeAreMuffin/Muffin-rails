@@ -1,7 +1,7 @@
 set :stage, :staging
 set :rails_env, 'staging'
 set :deploy_to, '/home/git/webapps/Muffin-rails_staging/'
-set :branch, 'master'
+set :branch, 'staging'
 
 # For everywhere
 
