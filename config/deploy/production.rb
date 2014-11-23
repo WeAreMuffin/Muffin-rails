@@ -32,7 +32,7 @@ server '192.168.1.12',
        primary: true,
        ssh_options: {
            keys: %w(/Users/sbarale/.ssh/id_rsa),
-           forward_agent: false,
+           forward_agent: true,
            auth_methods: %w(publickey),
            port: 2424
        }
