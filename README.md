@@ -44,7 +44,7 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: Muffin-rails_development
+  database: <database_name>
   pool:     5
   username: <username>
   password: <password>
@@ -54,7 +54,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: Muffin-rails_test
+  database: <database_name>
   pool:     5
   username: <username>
   password: <password>
@@ -64,7 +64,7 @@ staging:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: Muffin-rails_staging
+  database: <database_name>
   pool:     5
   username: <username>
   password: <password>
@@ -74,7 +74,7 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: Muffin-rails_production
+  database: <database_name>
   pool:     5
   username: <username>
   password: <password>
@@ -82,7 +82,7 @@ production:
 
 ```
 
-> Remplacez `<username>` et `<password>` respectivement par votre username postgres et votre mot de passe postgres.
+> Remplacez `<database_name>`, `<username>` et `<password>` respectivement par votre username postgres et votre mot de passe postgres.
 
 - Créez votre `secrets.yml`
 
@@ -91,8 +91,8 @@ development:
   admin_name: <user_firstname> <user_lastname>
   admin_email: <user_email>
   admin_password: <user_password>
-  email_provider_username: <%= ENV["GMAIL_USERNAME"] %>
-  email_provider_password: <%= ENV["GMAIL_PASSWORD"] %>
+  email_provider_username: <%= ENV["gmail_username"] %>
+  email_provider_password: <%= ENV["gmail_password"] %>
   domain_name: example.com
   secret_key_base: <secret_key>
 
@@ -101,22 +101,22 @@ test:
   secret_key_base: <secret_key>
 
 staging:
-  admin_name: <%= ENV['ADMIN_NAME_STAGING'] %>
-  admin_email: <%= ENV['ADMIN_EMAIL_STAGING'] %>
-  admin_password: <%= ENV['ADMIN_PASSWORD_STAGING'] %>
-  email_provider_username: <%= ENV['EMAIL_USERNAME_STAGING'] %>
-  email_provider_password: <%= ENV['EMAIL_PASSWORD_STAGING'] %>
-  domain_name: <%= ENV['DOMAIN_NAME_STAGING'] %>
-  secret_key_base: <%= ENV['SECRET_KEY_BASE_STAGING'] %>
+  admin_name: <%= ENV['admin_name_staging'] %>
+  admin_email: <%= ENV['admin_email_staging'] %>
+  admin_password: <%= ENV['admin_password_staging'] %>
+  email_provider_username: <%= ENV['email_username_staging'] %>
+  email_provider_password: <%= ENV['email_password_staging'] %>
+  domain_name: <%= ENV['domain_name_staging'] %>
+  secret_key_base: <%= ENV['secret_key_base_staging'] %>
 
 production:
-  admin_name: <%= ENV["ADMIN_NAME"] %>
-  admin_email: <%= ENV["ADMIN_EMAIL"] %>
-  admin_password: <%= ENV["ADMIN_PASSWORD"] %>
-  email_provider_username: <%= ENV["EMAIL_USERNAME"] %>
-  email_provider_password: <%= ENV["EMAIL_PASSWORD"] %>
-  domain_name: <%= ENV["DOMAIN_NAME"] %>
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  admin_name: <%= ENV["admin_name"] %>
+  admin_email: <%= ENV["admin_email"] %>
+  admin_password: <%= ENV["admin_password"] %>
+  email_provider_username: <%= ENV["email_username"] %>
+  email_provider_password: <%= ENV["email_password"] %>
+  domain_name: <%= ENV["domain_name"] %>
+  secret_key_base: <%= ENV["secret_key_base"] %>
 
 ```
 
@@ -172,7 +172,31 @@ refaire.
 
 ### Guard
 
-## Documentation and Support
+## Configuration serveur
+
+### Paquets nécessaires
+- curl               - Utilitaire HTTP, utliser pour installer rvm par exemple
+- git                - Besoin de git pour le déploiement
+- postgresql         - Base de données utilisée pour le projet
+- postgresql-contrib - Requis par la gem postgres
+- libpq-dev          - Header pour la gem postgres
+- build-essential    - Requis pour compiler des gems natives
+- zlib1g-dev         - Gzip
+- libssl-dev         - Si vous souhaitez utiliser le protocole SSL
+- libreadline-dev    - Dépendance Rails
+- libyaml-dev        - YAML support
+- libxml2-dev        - XML support
+- libxslt1-dev       - XML support extension
+- nodejs             - JS
+- nginx              - Serveur
+
+### Nginx
+
+### Unicorn
+
+### Capistrano
+
+## Déploiement
 
 ## Contribution
 
