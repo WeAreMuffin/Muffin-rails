@@ -1,5 +1,5 @@
 class VisitorsController < ApplicationController
 
-  def index
+  def hello
   end
 end
