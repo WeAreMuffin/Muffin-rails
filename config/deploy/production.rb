@@ -2,6 +2,7 @@ set :stage, :production
 set :rails_env, 'production'
 set :deploy_to, '/home/git/webapps/Muffin-rails_production/'
 set :branch, 'master'
+set :unicorn_pid, '/home/git/webapps/Muffin-rails_production/shared/pids/unicorn.pid'
 
 # For everywhere
 
@@ -37,7 +38,6 @@ server '192.168.1.12',
            port: 2424
        }
 
-set :unicorn_worker_count, 4
 set :enable_ssl, false
 
 
