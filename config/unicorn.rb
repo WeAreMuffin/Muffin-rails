@@ -6,15 +6,17 @@ timeout 30
 
 if env == 'production'
   worker_processes 4
+  app_name = 'Muffin-rails_production'
 elsif env == 'staging'
   worker_processes 2
+  app_name = 'Muffin-rails_staging'
 end
 
 user 'git', 'git'
 
 # Set your full path to application
-app_dir = File.expand_path('../../', __FILE__)
-shared_dir = File.expand_path('../../../../shared/', __FILE__)
+app_dir = "/home/git/webapps/#{app_name}/current"
+shared_dir = "/home/git/webapps/#{app_name}/shared"
 
 # Set unicorn options
 
@@ -32,7 +34,7 @@ stdout_path "#{shared_dir}/log/unicorn.stdout.log"
 # Set master PID location
 
 before_exec do |server|
-  ENV['BUNDLE_GEMFILE'] = "#{app_dir}/current/Gemfile"
+  ENV['BUNDLE_GEMFILE'] = "#{app_dir}/Gemfile"
 end
 
 before_fork do |server, worker|
