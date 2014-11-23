@@ -26,6 +26,8 @@ set :keep_releases, 5
 set :bundle_without, %w{development test}.join(' ')
 set :bundle_roles, :all
 
+set :pty, true
+
 namespace :bundler do
   desc 'Install gems with bundler.'
   task :install do
@@ -50,8 +52,8 @@ before 'deploy', 'rvm1:install:ruby'
 before 'deploy', 'bundler:install'
 before 'deploy:updated', 'bundler:install'
 
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     invoke 'unicorn:restart'
@@ -60,9 +62,6 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-
-  after :publishing, :restart
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -73,5 +72,4 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
-
 end
