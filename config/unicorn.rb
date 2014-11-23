@@ -22,7 +22,7 @@ shared_dir = "/home/git/webapps/#{app_name}/shared"
 
 # Fill path to your app
 working_directory app_dir
-pid "#{shared_dir}/pids/unicorn.pid"
+pid "#{app_dir}/tmp/pids/unicorn.pid"
 
 # Set up socket location
 listen "#{shared_dir}/sockets/unicorn.sock", :backlog => 64
