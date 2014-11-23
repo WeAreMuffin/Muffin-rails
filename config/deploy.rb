@@ -2,7 +2,7 @@ set :application, 'Muffin-rails'
 set :user, 'git'
 
 set :scm, :git
-set :repo_url, 'git@github.com:WeAreMuffin/Muffin-rails.git'
+set :repo_url, 'https://github.com/WeAreMuffin/Muffin-rails.git'
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.3'
