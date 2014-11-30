@@ -35,8 +35,7 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
+  background-color: $backgroundColor;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
@@ -79,4 +78,21 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $textColor;
+}
+
+// List Group override
+.list-group{
+  .list-group-item {
+    background: none;
+    border: none;
+  }
 }

@@ -1,0 +1,24 @@
+@mixin font-face($font-family, $font-name, $font-style: normal, $font-weight: 400) {
+  @font-face {
+    font-family: $font-family;
+    src: font-url("#{$font-name}.eot");
+    src: font-url("#{$font-name}.eot?#iefix") format('embedded-opentype'),
+    font-url("#{$font-name}.woff") format('woff'),
+    font-url("#{$font-name}.ttf") format('truetype'),
+    font-url("#{$font-name}.svg#icon") format('svg');
+    font-style: $font-style;
+    font-weight: $font-weight;
+  }
+}
+
+// OpenSans Font
+@include font-face('OpenSans', 'OpenSans/OpenSans-Regular');
+@include font-face('OpenSans', 'OpenSans/OpenSans-Italic', italic);
+@include font-face('OpenSans', 'OpenSans/OpenSans-Semibold', normal, 600);
+@include font-face('OpenSans', 'OpenSans/OpenSans-Light', normal, 300);
+
+// Lato Font
+@include font-face('Lato', 'Lato/Lato-Regular');
+
+// Moon Font
+@include font-face('Moon', 'Moon/moon');
