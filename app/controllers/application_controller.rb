@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protected
   def maintenance
     if Rails.application.secrets.application_status == 'maintenance'
-      redirect_to maintenance_index_path
+      redirect_to maintenance_path
     end
   end
 end
