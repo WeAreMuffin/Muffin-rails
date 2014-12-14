@@ -47,6 +47,22 @@ namespace :setup_unicorn_directory do
     end
   end
 end
+
+namespace :setup_config_rails do
+  task :create_directory do
+    on roles(:app) do
+      execute :mkdir, '-p /home/git/webapps/Muffin-rails_staging/shared/config'
+    end
+  end
+
+  task :upload_config do
+    on roles(:app) do
+      upload! '/config/application.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
+      upload! '/config/database.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
+      upload! '/config/secrets.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
+    end
+  end
+end
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary

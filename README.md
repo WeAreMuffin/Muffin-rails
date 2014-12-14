@@ -176,32 +176,19 @@ refaire.
 ## Test unitaire
 
 ### Guard
+Lancez la console `guard`
+```bash
+$ guard
+```
 
-## Configuration serveur
+Lorsque la console guard est prête, entrez la commande suivante
+```bash
+$ [1] guard(main)> all
+```
 
-### Paquets nécessaires
-- curl               - Utilitaire HTTP, utliser pour installer rvm par exemple
-- git                - Besoin de git pour le déploiement
-- postgresql         - Base de données utilisée pour le projet
-- postgresql-contrib - Requis par la gem postgres
-- libpq-dev          - Header pour la gem postgres
-- build-essential    - Requis pour compiler des gems natives
-- zlib1g-dev         - Gzip
-- libssl-dev         - Si vous souhaitez utiliser le protocole SSL
-- libreadline-dev    - Dépendance Rails
-- libyaml-dev        - YAML support
-- libxml2-dev        - XML support
-- libxslt1-dev       - XML support extension
-- nodejs             - JS
-- nginx              - Serveur
+Guard va ainsi effectué tous les tests untaires.
 
-### Nginx
-
-### Unicorn
-
-### Capistrano
-
-## Déploiement
+> Guard relance automatiquement lorsque vous effectuez des modifications sur les sources de Muffin.
 
 ## Contribution
 
@@ -209,5 +196,7 @@ refaire.
 
 Cette application a été générée avec [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 crée par [RailsApps Project](http://railsapps.github.io/).
+
+## Sources
 
 ## License

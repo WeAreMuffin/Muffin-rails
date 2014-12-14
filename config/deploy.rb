@@ -53,6 +53,8 @@ before 'deploy', 'bundler:install'
 before 'deploy:updated', 'bundler:install'
 
 before 'deploy', 'setup_unicorn_directory:sockets'
+before 'deploy', 'setup_config_rails:create_directory'
+after 'setup_config_rails:create_directory', 'setup_config_rails:upload_config'
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   desc 'Restart application'
