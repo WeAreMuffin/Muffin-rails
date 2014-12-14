@@ -57,9 +57,9 @@ namespace :setup_config_rails do
 
   task :upload_config do
     on roles(:app) do
-      upload! '/config/application.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
-      upload! '/config/database.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
-      upload! '/config/secrets.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
+      upload! 'config/application.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
+      upload! 'config/database.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
+      upload! 'config/secrets.yml', '/home/git/webapps/Muffin-rails_staging/shared/config'
     end
   end
 end
