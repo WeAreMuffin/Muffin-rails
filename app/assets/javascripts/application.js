@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require lib/snap.svg-min
+//= require websocket_rails/main
 //= require_tree .

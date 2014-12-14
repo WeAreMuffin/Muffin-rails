@@ -88,7 +88,8 @@ production:
 
 ```yml
 development:
-  admin_name: <user_firstname> <user_lastname>
+  admin_first_name: <user_firstname>
+  admin_last_name: <user_lastname>
   admin_email: <user_email>
   admin_password: <user_password>
   email_provider_username: <%= ENV["gmail_username"] %>
@@ -101,7 +102,8 @@ test:
   secret_key_base: <secret_key>
 
 staging:
-  admin_name: <%= ENV['admin_name_staging'] %>
+  admin_first_name: <%= ENV['admin_first_name_staging'] %>
+  admin_last_name: <%= ENV['admin_last_name_staging'] %>
   admin_email: <%= ENV['admin_email_staging'] %>
   admin_password: <%= ENV['admin_password_staging'] %>
   email_provider_username: <%= ENV['email_username_staging'] %>
@@ -110,7 +112,8 @@ staging:
   secret_key_base: <%= ENV['secret_key_base_staging'] %>
 
 production:
-  admin_name: <%= ENV["admin_name"] %>
+  admin_first_name: <%= ENV["admin_first_name"] %>
+  admin_last_name: <%= ENV["admin_last_name"] %>
   admin_email: <%= ENV["admin_email"] %>
   admin_password: <%= ENV["admin_password"] %>
   email_provider_username: <%= ENV["email_username"] %>
@@ -130,7 +133,8 @@ development:
   gmail_password: <gmail_password>
 
 staging:
-  admin_name_staging: <admin_username_for_staging>
+  admin_first_name_staging: <admin_user_first_name_for_staging>
+  admin_last_name_staging: <admin_user_last_name_for_staging>
   admin_email_staging: <admin_email_for_staging>
   admin_password_staging: <admin_password_for_staging>
   email_username_staging: <email_username_for_staging>
@@ -139,7 +143,8 @@ staging:
   secret_key_base_staging: <secret_key_for_staging>
 
 production:
-  admin_name: <admin_username_for_production>
+  admin_first_name: <admin_user_first_name_for_production>
+  admin_last_name: <admin_user_last_name_for_production>
   admin_email: <admin_email_for_production>
   admin_password: <admin_password_for_production>
   email_username: <email_username_for_production>

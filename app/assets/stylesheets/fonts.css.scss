@@ -11,6 +11,14 @@
   }
 }
 
+//Roboto Font
+@include font-face('Roboto', 'Roboto/Roboto-Regular');
+@include font-face('Roboto', 'Roboto/Roboto-Italic', italic);
+@include font-face('Roboto', 'Roboto/Roboto-Thin', normal, 100);
+@include font-face('Roboto', 'Roboto/Roboto-Light', normal, 300);
+@include font-face('Roboto', 'Roboto/Roboto-Bold', normal, 700);
+@include font-face('Roboto', 'Roboto/Roboto-BoldItalic', italic, 700);
+
 // OpenSans Font
 @include font-face('OpenSans', 'OpenSans/OpenSans-Regular');
 @include font-face('OpenSans', 'OpenSans/OpenSans-Italic', italic);

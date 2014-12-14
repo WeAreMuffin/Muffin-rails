@@ -22,6 +22,9 @@
     </header>
 <% end %>
 <main role="main">
+  <% unless getApplicationStatus == 'maintenance' %>
+      <%= render 'layouts/messages' %>
+  <% end %>
   <%= yield %>
 </main>
 </body>

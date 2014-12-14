@@ -17,6 +17,8 @@ gem 'pg'
 gem 'simple_form'
 gem 'figaro'
 gem 'bourbon'
+gem 'cancancan', '~> 1.9'
+gem 'websocket-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -39,6 +41,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'awesome_print'
+  gem 'pry-rails'
 end
 group :staging, :production do
   gem 'unicorn'
